@@ -27,6 +27,8 @@ import {
   Loader2,
   Pencil,
   PencilLine,
+  Plus,
+  Terminal,
   TrashIcon,
   XCircle,
 } from "lucide-react";
@@ -40,7 +42,16 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import { useRouter } from "next/navigation";
-import { Azeret_Mono } from "next/font/google";
+import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
+import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
+} from "@/components/ui/dialog";
+import AddRoomForm from "../room/AddRoomForm";
 
 interface AddHotelFormProps {
   hotel: HotelWithRooms | null;
@@ -89,6 +100,7 @@ const AddHotelForm = ({ hotel }: AddHotelFormProps) => {
   const [cities, setCities] = useState<ICity[]>([]);
   const [isLoading, setIsLoading] = useState(false);
   const [isHotelDeleting, setIsHotelDeleting] = useState(false);
+  const [open, setOpen] = useState(false);
 
   const { toast } = useToast();
   const router = useRouter();
@@ -243,6 +255,10 @@ const AddHotelForm = ({ hotel }: AddHotelFormProps) => {
       .finally(() => {
         setImageIsDeleting(false);
       });
+  };
+
+  const handleDialogueOpen = () => {
+    setOpen((prev) => !prev);
   };
 
   return (
@@ -659,11 +675,20 @@ const AddHotelForm = ({ hotel }: AddHotelFormProps) => {
                   </FormItem>
                 )}
               />
+              {hotel && !hotel.rooms.length && (
+                <Alert className="bg-indigo-500 text-white">
+                  <Terminal className="h-4 w-4 stroke-white" />
+                  <AlertTitle>One last step!</AlertTitle>
+                  <AlertDescription>
+                    <div>Please add some rooms to complete hotel setup</div>
+                  </AlertDescription>
+                </Alert>
+              )}
               <div className="flex justify-between gap-2 flex-wrap">
                 {hotel && (
                   <Button
                     onClick={() => handleDeleteHotel(hotel)}
-                    variant="ghost"
+                    variant="destructive"
                     type="button"
                     className="max-w-[150px]"
                     disabled={isHotelDeleting || isLoading}>
@@ -683,11 +708,36 @@ const AddHotelForm = ({ hotel }: AddHotelFormProps) => {
                 {hotel && (
                   <Button
                     type="button"
-                    variant="outline"
+                    variant="secondary"
+                    className="max-w[150px]"
                     onClick={() => router.push(`hotel-details/${hotel.id}`)}>
                     <Eye className="mr-2 h-4 w-4" />
                     View
                   </Button>
+                )}
+                {hotel && (
+                  <Dialog open={open} onOpenChange={setOpen}>
+                    <DialogTrigger>
+                      <Button
+                        type="button"
+                        variant="outline"
+                        className="max-w-[150px]">
+                        <Plus className="mr-2 h-4 w-4" /> Add Room
+                      </Button>
+                    </DialogTrigger>
+                    <DialogContent className="max-w-[900px] w-[90%]">
+                      <DialogHeader className="px-2">
+                        <DialogTitle>Add a room</DialogTitle>
+                        <DialogDescription>
+                          Add details about a room in your hotel
+                        </DialogDescription>
+                      </DialogHeader>
+                      <AddRoomForm
+                        hotel={hotel}
+                        handleDialogueOpen={handleDialogueOpen}
+                      />
+                    </DialogContent>
+                  </Dialog>
                 )}
                 {hotel ? (
                   <Button className="max-w[150px]" disabled={isLoading}>
