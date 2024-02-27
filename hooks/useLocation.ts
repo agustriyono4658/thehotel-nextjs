@@ -24,8 +24,7 @@ const useLocation = () => {
 
   const getStateCities = (countryCode: string, stateCode?: string) => {
     return City.getAllCities().filter(
-      (city) => city.countryCode === countryCode && city,
-      stateCode === stateCode
+      (city) => city.countryCode === countryCode && city.stateCode === stateCode
     );
   };
 
