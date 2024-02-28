@@ -313,7 +313,7 @@ const AddHotelForm = ({ hotel }: AddHotelFormProps) => {
                     control={form.control}
                     name="gym"
                     render={({ field }) => (
-                      <FormItem className="flex flex-row items-end space-x-3 rounded-md p-4">
+                      <FormItem className="flex flex-row items-end space-x-3 rounded-md border p-4">
                         <FormControl>
                           <Checkbox
                             checked={field.value}
@@ -328,7 +328,7 @@ const AddHotelForm = ({ hotel }: AddHotelFormProps) => {
                     control={form.control}
                     name="spa"
                     render={({ field }) => (
-                      <FormItem className="flex flex-row items-end space-x-3 rounded-md p-4">
+                      <FormItem className="flex flex-row items-end space-x-3 rounded-md border p-4">
                         <FormControl>
                           <Checkbox
                             checked={field.value}
@@ -343,7 +343,7 @@ const AddHotelForm = ({ hotel }: AddHotelFormProps) => {
                     control={form.control}
                     name="bar"
                     render={({ field }) => (
-                      <FormItem className="flex flex-row items-end space-x-3 rounded-md p-4">
+                      <FormItem className="flex flex-row items-end space-x-3 rounded-md border p-4">
                         <FormControl>
                           <Checkbox
                             checked={field.value}
@@ -358,7 +358,7 @@ const AddHotelForm = ({ hotel }: AddHotelFormProps) => {
                     control={form.control}
                     name="laundry"
                     render={({ field }) => (
-                      <FormItem className="flex flex-row items-end space-x-3 rounded-md p-4">
+                      <FormItem className="flex flex-row items-end space-x-3 rounded-md border p-4">
                         <FormControl>
                           <Checkbox
                             checked={field.value}
@@ -373,7 +373,7 @@ const AddHotelForm = ({ hotel }: AddHotelFormProps) => {
                     control={form.control}
                     name="restaurant"
                     render={({ field }) => (
-                      <FormItem className="flex flex-row items-end space-x-3 rounded-md p-4">
+                      <FormItem className="flex flex-row items-end space-x-3 rounded-md border p-4">
                         <FormControl>
                           <Checkbox
                             checked={field.value}
@@ -388,7 +388,7 @@ const AddHotelForm = ({ hotel }: AddHotelFormProps) => {
                     control={form.control}
                     name="shopping"
                     render={({ field }) => (
-                      <FormItem className="flex flex-row items-end space-x-3 rounded-md p-4">
+                      <FormItem className="flex flex-row items-end space-x-3 rounded-md border p-4">
                         <FormControl>
                           <Checkbox
                             checked={field.value}
@@ -403,7 +403,7 @@ const AddHotelForm = ({ hotel }: AddHotelFormProps) => {
                     control={form.control}
                     name="freeParking"
                     render={({ field }) => (
-                      <FormItem className="flex flex-row items-end space-x-3 rounded-md p-4">
+                      <FormItem className="flex flex-row items-end space-x-3 rounded-md border p-4">
                         <FormControl>
                           <Checkbox
                             checked={field.value}
@@ -418,7 +418,7 @@ const AddHotelForm = ({ hotel }: AddHotelFormProps) => {
                     control={form.control}
                     name="bikeRental"
                     render={({ field }) => (
-                      <FormItem className="flex flex-row items-end space-x-3 rounded-md p-4">
+                      <FormItem className="flex flex-row items-end space-x-3 rounded-md border p-4">
                         <FormControl>
                           <Checkbox
                             checked={field.value}
@@ -433,7 +433,7 @@ const AddHotelForm = ({ hotel }: AddHotelFormProps) => {
                     control={form.control}
                     name="freeWifi"
                     render={({ field }) => (
-                      <FormItem className="flex flex-row items-end space-x-3 rounded-md p-4">
+                      <FormItem className="flex flex-row items-end space-x-3 rounded-md border p-4">
                         <FormControl>
                           <Checkbox
                             checked={field.value}
@@ -448,7 +448,7 @@ const AddHotelForm = ({ hotel }: AddHotelFormProps) => {
                     control={form.control}
                     name="movieNight"
                     render={({ field }) => (
-                      <FormItem className="flex flex-row items-end space-x-3 rounded-md p-4">
+                      <FormItem className="flex flex-row items-end space-x-3 rounded-md border p-4">
                         <FormControl>
                           <Checkbox
                             checked={field.value}
@@ -463,7 +463,7 @@ const AddHotelForm = ({ hotel }: AddHotelFormProps) => {
                     control={form.control}
                     name="swimmingPool"
                     render={({ field }) => (
-                      <FormItem className="flex flex-row items-end space-x-3 rounded-md p-4">
+                      <FormItem className="flex flex-row items-end space-x-3 rounded-md border p-4">
                         <FormControl>
                           <Checkbox
                             checked={field.value}
@@ -478,7 +478,7 @@ const AddHotelForm = ({ hotel }: AddHotelFormProps) => {
                     control={form.control}
                     name="coffeeShop"
                     render={({ field }) => (
-                      <FormItem className="flex flex-row items-end space-x-3 rounded-md p-4">
+                      <FormItem className="flex flex-row items-end space-x-3 rounded-md border p-4">
                         <FormControl>
                           <Checkbox
                             checked={field.value}
